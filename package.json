@@ -1,0 +1,22 @@
+{
+  "name": "ssps-dvwb-senzoricke-opraseni",
+  "version": "0.1.0",
+  "description": "Série logických programovacích úloh na DVOP Webový backend na SSPŠ pro školní rok 2023/2024",
+  "main": "src/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frvojacek/ssps-dvwb-senzoricke-opraseni.git"
+  },
+  "author": "František Vojáček",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/frvojacek/ssps-dvwb-senzoricke-opraseni/issues"
+  },
+  "homepage": "https://github.com/frvojacek/ssps-dvwb-senzoricke-opraseni#readme"
+}
