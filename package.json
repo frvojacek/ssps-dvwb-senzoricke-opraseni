@@ -4,7 +4,8 @@
   "description": "Série logických programovacích úloh na DVOP Webový backend na SSPŠ pro školní rok 2023/2024",
   "main": "src/index.js",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "test": "tests"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
