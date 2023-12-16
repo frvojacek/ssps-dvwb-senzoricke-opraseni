@@ -17,7 +17,12 @@ function getDistances() {
   grid.forEach((row, rowIndex) => {
     row.forEach((cell, columnIndex) => {
       if(cell === 'A') {
-        distances.push([rowIndex, columnIndex, ...scannedValues[scannedIndex]])
+        distances.push({
+          x: rowIndex,
+          y: columnIndex,
+          z: scannedValues[scannedIndex][0],
+          probability: scannedValues[scannedIndex][1],
+        })
         scannedIndex++
       }
     })
