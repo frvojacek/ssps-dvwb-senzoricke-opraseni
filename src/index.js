@@ -50,3 +50,15 @@ function getAveragePosition() {
 
   return averagePosition
 }
+
+const filteredDistances = distances.filter(distance => { return computeDistance(averagePosition, distance) <= gridSize / 2 })
+
+// Geometric mean theorem 
+function computeDistance (a, b) {
+  let toExtractRoot = 0
+  axes.forEach(axis => {
+    toExtractRoot += Math.pow(a[axis] - b[axis], 2)
+  });
+  
+  return Math.sqrt(toExtractRoot)
+}
