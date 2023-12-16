@@ -1,7 +1,7 @@
 import * as fs from 'fs'
 import { URL } from 'url'
 
-const inputPath = new URL('../tests/test0.in', import.meta.url)
+const inputPath = new URL('../tests/test2.in', import.meta.url)
 const input = fs.readFileSync(inputPath).toString()
 
 const lines = input.split(/\r?\n/)
@@ -62,3 +62,12 @@ function computeDistance (a, b) {
   
   return Math.sqrt(toExtractRoot)
 }
+
+let finalScore = 0
+
+filteredDistances.forEach(distance => {
+  let invertedProbability = 1 - distance.probability
+  finalScore += invertedProbability * computeDistance(averagePosition, distance)
+});
+
+console.log(Math.round(finalScore * 100) / 100)
