@@ -8,6 +8,7 @@ const lines = input.split(/\r?\n/)
 const gridSize = lines[0].length
 const grid = lines.slice(0, gridSize).map(line => line.split(''))
 const scannedValues = lines.slice(gridSize).map(line => line.split(' ').map(x => Number(x)))
+const axes = ['x', 'y', 'z']
 const distances = getDistances()
 
 function getDistances() {
@@ -29,4 +30,23 @@ function getDistances() {
   });
 
   return distances
+}
+
+const averagePosition = getAveragePosition()
+
+function getAveragePosition() {
+  let averagePosition = { x: 0, y: 0, z: 0 }
+
+  distances.forEach(distance => {
+    axes.forEach(axis => {
+      averagePosition[axis] += distance[axis]
+    });
+  })
+
+  axes.forEach(axis =>{
+    averagePosition[axis] /= distances.length
+    averagePosition[axis] = Math.floor(averagePosition[axis])
+  })
+
+  return averagePosition
 }
