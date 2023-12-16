@@ -17,7 +17,7 @@ function getDistances() {
 
   grid.forEach((row, rowIndex) => {
     row.forEach((cell, columnIndex) => {
-      if(cell === 'A') {
+      if (cell === 'A') {
         distances.push({
           x: columnIndex,
           y: rowIndex,
@@ -43,7 +43,7 @@ function getAveragePosition() {
     });
   })
 
-  axes.forEach(axis =>{
+  axes.forEach(axis => {
     averagePosition[axis] /= distances.length
     averagePosition[axis] = Math.floor(averagePosition[axis])
   })
@@ -51,23 +51,22 @@ function getAveragePosition() {
   return averagePosition
 }
 
-const filteredDistances = distances.filter(distance => { return computeDistance(averagePosition, distance) <= gridSize / 2 })
+const filteredDistances = distances.filter(distance => { return computeDistance(averagePosition, distance) <= Math.ceil(gridSize / 2) })
 
 // Geometric mean theorem 
-function computeDistance (a, b) {
+function computeDistance(a, b) {
   let toExtractRoot = 0
   axes.forEach(axis => {
     toExtractRoot += Math.pow(a[axis] - b[axis], 2)
   });
-  
+
   return Math.sqrt(toExtractRoot)
 }
 
 let finalScore = 0
 
 filteredDistances.forEach(distance => {
-  let invertedProbability = 1 - distance.probability
-  finalScore += invertedProbability * computeDistance(averagePosition, distance)
+  finalScore += (1 - distance.probability) * Math.floor(computeDistance(averagePosition, distance))
 });
 
 console.log(Math.round(finalScore * 100) / 100)
