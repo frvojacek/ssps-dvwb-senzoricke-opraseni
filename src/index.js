@@ -19,8 +19,8 @@ function getDistances() {
     row.forEach((cell, columnIndex) => {
       if(cell === 'A') {
         distances.push({
-          x: rowIndex,
-          y: columnIndex,
+          x: columnIndex,
+          y: rowIndex,
           z: scannedValues[scannedIndex][0],
           probability: scannedValues[scannedIndex][1],
         })
