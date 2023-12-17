@@ -10,8 +10,8 @@ Celé zadání je možné najít v [docs/senzoricke-opraseni-instructions.pdf](d
 
 | Test                              | Hodnocení | Základ	|
 | -:								| :-:		| :-:		|
-| Triviální příklady a čtení		| 0 %		| 10 %		|
-| Určování pozic	                | 0 %		| 10 %		|
-| Komplexní příklady		        | 0 %		| 20 %		|
-| Náhodné příklady					| 0 %		| 60 %		|
-| **Výsledek**						| **0 %**	| **100 %** |
+| Triviální příklady a čtení		| 10 %		| 10 %		|
+| Určování pozic	                | 10 %		| 10 %		|
+| Komplexní příklady		        | 20 %		| 20 %		|
+| Náhodné příklady					| 60 %		| 60 %		|
+| **Výsledek**						| **100 %**	| **100 %** |
